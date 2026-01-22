@@ -21,4 +21,20 @@
 - Postman tests confirmed correct JSON response format and data
 
 ### Screenshots
-![Postman API Response](screenshots/week01_postman_response.png)
+![Postman API Response](docs\week01\screenshots\API_Response_Scores.png.png)
+(docs\week01\screenshots\API_Response.png.png)
+(docs\week01\screenshots\Postman_Response.png.png)
+(docs\week01\screenshots\SQL_Query_Response.png)
+
+
+### API Testing (Postman)
+- Endpoint: `GET /rm-scores`
+- Response:
+  ```json
+  {
+    "region": "Mumbai",
+    "average_score": 13.35,
+    "best_score": 16,
+    "worst_score": 3
+  }
+

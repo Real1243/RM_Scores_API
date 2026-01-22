@@ -3,6 +3,10 @@ from services.rm_scores import get_rm_scores_with_extremes
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "API is running. Go to /rm-scores for viewing the scores..."
+
 @app.route("/rm-scores", methods=["GET"])
 def rm_scores():
     return jsonify(get_rm_scores_with_extremes())
