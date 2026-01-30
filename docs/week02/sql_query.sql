@@ -181,18 +181,46 @@
 
 
 
+-- SELECT
+--             ri.score_json
+--         FROM investigen.transaction_info ti
+--         JOIN investigen.user_master um ON ti.rm_id = um.rm_id
+--         JOIN investigen.recorded_info ri ON ti.record_id = ri.record_id
+--         WHERE um.region = 'Mumbai'
+--           AND um.rm_id <> 'SAB001'
+--           AND um.superadminid = 'SAB001' 
+--           AND ri.score_json IS NOT NULL;
+
+
+
+-- SELECT 
+--     um.rm_id, 
+--     ri.score_json
+-- FROM investigen.user_master um
+-- LEFT JOIN investigen.transaction_info ti 
+--     ON ti.rm_id = um.rm_id
+-- LEFT JOIN investigen.recorded_info ri 
+--     ON ti.record_id = ri.record_id
+-- WHERE um.region = %s
+--   AND um.superadminid = %s;
 
 
 
 
 
 
+-- SELECT rm_id, COUNT(*) 
+-- FROM investigen.transaction_info
+-- GROUP BY rm_id
+-- ORDER BY count DESC;
 
 
 
 
 
-
+-- SELECT rm_id, COUNT(DISTINCT record_id)
+-- FROM investigen.transaction_info
+-- GROUP BY rm_id;
 
 
 
