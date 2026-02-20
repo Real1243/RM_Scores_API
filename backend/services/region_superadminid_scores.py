@@ -388,6 +388,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# okay it worked now explain everything in the code for me everything and why are certain things the way they are
+
 import sys
 import os
 import json
@@ -465,7 +482,7 @@ def get_topic_best_worst_by_region_all_rms(region=None, superadmin_id=None):
         return {"error": "Database connection or query failed"}, 500
 
     if not rows:
-        return {"error": "No RM data found"}, 200
+        return {"error": "No RM data found"}, 404
 
     # -------------------- 🧠 PROCESSING --------------------
     rm_topic_scores = {}
@@ -505,7 +522,6 @@ def get_topic_best_worst_by_region_all_rms(region=None, superadmin_id=None):
                 score = float(score_raw.split("/")[0])
             except (ValueError, AttributeError):
                 continue
-            # print(traceback format_exc())
 
             if topic not in rm_topic_scores[rm_id]["topics"]:
                 rm_topic_scores[rm_id]["topics"][topic] = {
@@ -550,3 +566,28 @@ def get_topic_best_worst_by_region_all_rms(region=None, superadmin_id=None):
         return response_payload, 206
 
     return response_payload, 200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------->
+
+
